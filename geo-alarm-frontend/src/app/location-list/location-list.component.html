@@ -1,1 +1,30 @@
-<p>location-list works!</p>
+<h2>Location List</h2>
+<table class="table table-triped">
+    <thead>
+        <tr>
+            <th>Street1</th>
+            <th>Street2</th>
+            <th>City</th>
+            <th>State/Region</th>
+            <th>Country</th>
+            <th>ZIPCODE</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor = "let location of locations">
+            <td> {{location.street1}} </td>
+            <td> {{location.street2}} </td>
+            <td> {{location.city}} </td>
+            <td> {{location.stateRegion}} </td>
+            <td> {{location.country}} </td>
+            <td> {{location.zipCode}} </td>
+            <td> {{location.latitude}} </td>
+            <td> {{location.longitude}} </td>            
+        </tr>
+    </tbody>
+
+</table>
