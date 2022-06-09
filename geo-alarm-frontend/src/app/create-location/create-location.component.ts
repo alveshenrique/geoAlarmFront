@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '../location';
 
 @Component({
   selector: 'app-create-location',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateLocationComponent implements OnInit {
 
+  location: Location = new Location();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    console.log(this.location);
   }
 
 }
