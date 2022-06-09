@@ -14,4 +14,8 @@ export class LocationService {
   getLocationsList() : Observable<Location[]> {
     return this.httpClient.get<Location[]>(`${this.baseURL}`);
   }
+
+  createLocation(location: Location): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}`, location)
+  }
 }
