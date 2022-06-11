@@ -15,7 +15,15 @@ export class LocationService {
     return this.httpClient.get<Location[]>(`${this.baseURL}`);
   }
 
+  getLocationsById(id: number) : Observable<Location> {
+    return this.httpClient.get<Location>(`${this.baseURL}/${id}`);
+  }
+
   createLocation(location: Location): Observable<Object> {
     return this.httpClient.post(`${this.baseURL}`, location)
+  }
+
+  updateLocation(id: number, location: Location): Observable<Object> {
+    return this.httpClient.put(`${this.baseURL}/${id}`, location);
   }
 }
