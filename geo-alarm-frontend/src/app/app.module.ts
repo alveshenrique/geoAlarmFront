@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { LocationListComponent } from './location-list/location-list.component';
 import { CreateLocationComponent } from './create-location/create-location.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateLocationComponent } from './update-location/update-location.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LocationListComponent,
-    CreateLocationComponent
+    CreateLocationComponent,
+    UpdateLocationComponent
   ],
   imports: [
     BrowserModule,

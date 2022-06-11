@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Location } from '../location';
 import { LocationService } from '../location.service';
 
@@ -11,7 +12,8 @@ export class LocationListComponent implements OnInit {
 
   locations: Location[];
 
-  constructor(private locationService: LocationService) { }
+  constructor(private locationService: LocationService,
+    private router: Router) { }
 
   ngOnInit(): void {
 
@@ -46,6 +48,11 @@ export class LocationListComponent implements OnInit {
     this.locationService.getLocationsList().subscribe(data => {
       this.locations = data;
     })
+  }
+
+  updateLocation(id: number){
+    this.router.navigate(['update-location', id]);
+
   }
 
 }

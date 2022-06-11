@@ -10,7 +10,7 @@
             <th>ZIPCODE</th>
             <th>Latitude</th>
             <th>Longitude</th>
-
+            <th>Actions</th>
         </tr>
 
     </thead>
@@ -23,7 +23,10 @@
             <td> {{location.country}} </td>
             <td> {{location.zipCode}} </td>
             <td> {{location.latitude}} </td>
-            <td> {{location.longitude}} </td>            
+            <td> {{location.longitude}} </td>
+            <td>
+                <button (click)="updateLocation(location.id)" class="btn btn-primary">Update</button>
+            </td>            
         </tr>
     </tbody>
 

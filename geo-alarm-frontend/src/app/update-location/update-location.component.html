@@ -1,0 +1,63 @@
+<div class="col-md-10 offset-md-1">
+
+    <h3> Update your Location</h3>
+    <form (ngSubmit) = "onSubmit()">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Street 1</label>
+            <div class="col-sm-10 py-2">
+                <input type="text" class="form-control" id="street1" 
+                [(ngModel)] = "location.street1" name="street1">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Street 2</label>
+            <div class="col-sm-10 py-2">
+                <input type="text" class="form-control" id="street2" 
+                [(ngModel)] = "location.street2" name="street2">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> City</label>
+            <div class="col-sm-10 py-2">
+                <input type="text" class="form-control" id="city" 
+                [(ngModel)] = "location.city" name="city">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> State/Region</label>
+            <div class="col-sm-10 py-2">
+                <input type="text" class="form-control" id="stateRegion" 
+                [(ngModel)] = "location.stateRegion" name="stateRegion">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Country</label>
+            <div class="col-sm-10 py-2">
+                <input type="text" class="form-control" id="country" 
+                [(ngModel)] = "location.country" name="country">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> ZIPCODE</label>
+            <div class="col-sm-10 py-2">
+                <input type="text" class="form-control" id="zipCode" 
+                [(ngModel)] = "location.zipCode" name="zipCode">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Latitude</label>
+            <div class="col-sm-10 py-2">
+                <input type="text" class="form-control" id="latitude" 
+                [(ngModel)] = "location.latitude" name="latitude">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Longitude</label>
+            <div class="col-sm-10 py-2">
+                <input type="text" class="form-control" id="longitude" 
+                [(ngModel)] = "location.longitude" name="longitude">
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit">Save</button>
+    </form>
+</div>
