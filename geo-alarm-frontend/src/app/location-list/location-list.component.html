@@ -10,7 +10,7 @@
             <th>ZIPCODE</th>
             <th>Latitude</th>
             <th>Longitude</th>
-            <th>Actions</th>
+            <th class="text-center">Actions</th>
         </tr>
 
     </thead>
@@ -25,7 +25,8 @@
             <td> {{location.latitude}} </td>
             <td> {{location.longitude}} </td>
             <td>
-                <button (click)="updateLocation(location.id)" class="btn btn-primary">Update</button>
+                <button (click)="updateLocation(location.id)" class="btn btn-primary mx-2">Update</button>
+                <button (click)="deleteLocation(location.id)" class="btn btn-danger mx-2">Delete</button>
             </td>            
         </tr>
     </tbody>

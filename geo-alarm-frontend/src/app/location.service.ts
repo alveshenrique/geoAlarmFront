@@ -26,4 +26,8 @@ export class LocationService {
   updateLocation(id: number, location: Location): Observable<Object> {
     return this.httpClient.put(`${this.baseURL}/${id}`, location);
   }
+
+  deleteLocation(id: number): Observable<Object> {
+    return this.httpClient.delete<Location>(`${this.baseURL}/${id}`);
+  }
 }
