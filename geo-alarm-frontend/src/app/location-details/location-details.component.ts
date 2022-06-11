@@ -12,6 +12,8 @@ export class LocationDetailsComponent implements OnInit {
 
   id: number;
   location: Location;
+  clickLocation: Location = new Location();
+
   constructor(private route: ActivatedRoute,
     private locationService: LocationService) { }
 
@@ -22,6 +24,13 @@ export class LocationDetailsComponent implements OnInit {
       next: (data) => this.location = data,
       error: (error) => console.log(error)
     });
+  }
+
+  onChoseLocation(event: any) {
+    console.log(event);
+    this.clickLocation.latitude = event.coords.lat;
+    this.clickLocation.longitude = event.coords.lng;
+    console.log("click locaton: (" + this.clickLocation.latitude + ", " + this.clickLocation.longitude + ")");
   }
 
 }

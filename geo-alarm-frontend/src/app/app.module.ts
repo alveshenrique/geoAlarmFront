@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AgmCoreModule } from '@agm/core';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,9 @@ import { CreateLocationComponent } from './create-location/create-location.compo
 import { FormsModule } from '@angular/forms';
 import { UpdateLocationComponent } from './update-location/update-location.component';
 import { LocationDetailsComponent } from './location-details/location-details.component';
+
+// GET YOUR API KEY AND USE IT INSTEAD OF environment.API_KEY
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,10 @@ import { LocationDetailsComponent } from './location-details/location-details.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+    apiKey: environment.API_KEY      
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

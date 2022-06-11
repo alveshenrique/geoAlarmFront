@@ -8,3 +8,7 @@
         {{location?.latitude ? (location?.longitude ? location?.latitude + ", " + location?.longitude : "") : ""}}
     </div>
 </div>
+<agm-map *ngIf="location" [latitude] = location.latitude [longitude] = location.longitude (mapClick)="onChoseLocation($event)">
+    <agm-marker [latitude]=clickLocation.latitude [longitude]=clickLocation.longitude></agm-marker>
+
+</agm-map>

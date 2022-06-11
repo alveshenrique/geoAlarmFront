@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '../location';
 import { LocationService } from '../location.service';
-// PATH TO YOUR JSON FILE
-import {environment} from '../../environments/environment';
-
 
 @Component({
   selector: 'app-location-list',
@@ -21,8 +18,6 @@ export class LocationListComponent implements OnInit {
   ngOnInit(): void {
 
     this.getLocations();
-    console.log(environment.API_KEY);
-
 
     // Mocked Values
     // this.locations = [{
