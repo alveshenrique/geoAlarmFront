@@ -18,11 +18,10 @@ export class CreateLocationComponent implements OnInit {
   }
 
   saveLocation() {
-    this.locationService.createLocation(this.location).subscribe(data => {
-      console.log(data);
-      this.goToLocationList();
-    },
-    error => console.log(error));
+    this.locationService.createLocation(this.location).subscribe({
+      next: (data) => this.goToLocationList(),
+      error: (error) => console.log(error)
+    });
   }
 
   goToLocationList() {
