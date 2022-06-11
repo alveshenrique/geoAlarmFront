@@ -63,4 +63,8 @@ export class LocationListComponent implements OnInit {
     });
   }
 
+  viewLocation(id: number) {
+    
+  }
+
 }

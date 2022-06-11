@@ -8,13 +8,15 @@ import { LocationListComponent } from './location-list/location-list.component';
 import { CreateLocationComponent } from './create-location/create-location.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateLocationComponent } from './update-location/update-location.component';
+import { LocationDetailsComponent } from './location-details/location-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LocationListComponent,
     CreateLocationComponent,
-    UpdateLocationComponent
+    UpdateLocationComponent,
+    LocationDetailsComponent
   ],
   imports: [
     BrowserModule,

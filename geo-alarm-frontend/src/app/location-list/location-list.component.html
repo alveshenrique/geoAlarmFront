@@ -16,17 +16,20 @@
     </thead>
     <tbody>
         <tr *ngFor = "let location of locations">
-            <td> {{location.street1}} </td>
-            <td> {{location.street2}} </td>
-            <td> {{location.city}} </td>
-            <td> {{location.stateRegion}} </td>
-            <td> {{location.country}} </td>
-            <td> {{location.zipCode}} </td>
-            <td> {{location.latitude}} </td>
-            <td> {{location.longitude}} </td>
-            <td>
-                <button (click)="updateLocation(location.id)" class="btn btn-primary mx-2">Update</button>
-                <button (click)="deleteLocation(location.id)" class="btn btn-danger mx-2">Delete</button>
+            <td class="col-md-2"> {{location.street1}} </td>
+            <td class="col-md-2"> {{location.street2}} </td>
+            <td class="col-md-1"> {{location.city}} </td>
+            <td class="col-md-1"> {{location.stateRegion}} </td>
+            <td class="col-md-1"> {{location.country}} </td>
+            <td class="col-md-1"> {{location.zipCode}} </td>
+            <td class="col-md-1"> {{location.latitude}} </td>
+            <td class="col-md-1"> {{location.longitude}} </td>
+            <td class="col-md-2">
+                <div class="text-center">
+                    <button title="Update" (click)="updateLocation(location.id)" class="btn btn-sm btn-primary col-md-4 mx-1 w-fit"><i class="bi bi-arrow-repeat"></i></button>
+                    <button title="Delete" (click)="deleteLocation(location.id)" class="btn btn-sm btn-danger col-md-4 mx-1 w-fit"><i class="bi bi-trash"></i></button>
+                    <button title="View" (click)="viewLocation(location.id)" class="btn btn-sm btn-info col-md-4 mx-1 w-fit"><i class="bi bi-search"></i></button>
+                </div>
             </td>            
         </tr>
     </tbody>
