@@ -64,7 +64,7 @@ export class LocationListComponent implements OnInit {
   }
 
   viewLocation(id: number) {
-    
+    this.router.navigate(['location-details', id]);
   }
 
 }
