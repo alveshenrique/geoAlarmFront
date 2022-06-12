@@ -14,7 +14,7 @@
         <label><b>Your Location: </b>({{userLocation?.latitude ? (userLocation?.longitude ? userLocation?.latitude + ", " + userLocation?.longitude : "") : ""}})</label>
     </div>
 </div>
-<agm-map *ngIf="location" [latitude] = location.latitude [longitude] = location.longitude (mapClick)="onChoseLocation($event)">
+<!-- <agm-map *ngIf="location" [latitude] = location.latitude [longitude] = location.longitude (mapClick)="onChoseLocation($event)">
     <agm-marker [latitude]=clickLocation.latitude [longitude]=clickLocation.longitude></agm-marker>
 
-</agm-map>
+</agm-map> -->

@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AgmCoreModule } from '@agm/core';
-
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,10 +25,7 @@ import {environment} from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    AgmCoreModule.forRoot({
-    apiKey: environment.API_KEY      
-    })
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
