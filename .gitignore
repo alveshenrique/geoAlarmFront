@@ -43,3 +43,6 @@ Thumbs.db
 
 # Env files
 env.keys.ts
+
+# Removed package-lock.json because it went unsync with package-json
+package-lock.json
