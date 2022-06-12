@@ -15,6 +15,7 @@ export class LocationDetailsComponent implements OnInit {
   id: number;
   location: Location;
   clickLocation: Location = new Location();
+  userLocation: Location = new Location();
 
   constructor(private route: ActivatedRoute,
     private locationService: LocationService,
@@ -31,8 +32,8 @@ export class LocationDetailsComponent implements OnInit {
     this.geolocation.subscribe({
       next: (data: GeolocationPosition) => {
         console.log(data);
-        this.clickLocation.latitude = data.coords.latitude;
-        this.clickLocation.longitude = data.coords.longitude;
+        this.userLocation.latitude = data.coords.latitude;
+        this.userLocation.longitude = data.coords.longitude;
       },
       error: (error) => console.log(error)
     });

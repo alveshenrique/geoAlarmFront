@@ -1,11 +1,17 @@
 <h3>View Location Details</h3>
 <div class="row">
-    <label><b>Address: </b></label>
-    <div>
-        {{location?.street1}}{{location?.street2 ? " " + location?.street2 : ""}} <br>
-        {{location?.city}}, {{location?.stateRegion}}, {{location?.country}} <br>
-        {{location?.zipCode}} <br>
-        {{location?.latitude ? (location?.longitude ? location?.latitude + ", " + location?.longitude : "") : ""}}
+    <div class=" col-md-6">
+        <label><b>Address: </b></label>
+        <div>
+            {{location?.street1}}{{location?.street2 ? " " + location?.street2 : ""}} <br>
+            {{location?.city}}, {{location?.stateRegion}}, {{location?.country}} <br>
+            {{location?.zipCode}} <br>
+            {{location?.latitude ? (location?.longitude ? location?.latitude + ", " + location?.longitude : "") : ""}}
+        </div>
+    </div>
+    <div class=" col-md-6">
+        <label><b>Selected Location: </b>{{clickLocation?.latitude ? (clickLocation?.longitude ? "(" + clickLocation?.latitude + ", " + clickLocation?.longitude + ")" : "") : ""}}</label><br>
+        <label><b>Your Location: </b>({{userLocation?.latitude ? (userLocation?.longitude ? userLocation?.latitude + ", " + userLocation?.longitude : "") : ""}})</label>
     </div>
 </div>
 <agm-map *ngIf="location" [latitude] = location.latitude [longitude] = location.longitude (mapClick)="onChoseLocation($event)">
