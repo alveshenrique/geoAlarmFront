@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --configuration production"
   },
   "engines": {
     "node": "^16.15.1",
