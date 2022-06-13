@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GeolocationService } from '@ng-web-apis/geolocation';
 import { Location } from '../location';
 import { LocationService } from '../location.service';
 
@@ -10,14 +11,26 @@ import { LocationService } from '../location.service';
 })
 export class LocationListComponent implements OnInit {
 
+  clickLocation: Location = new Location();
+  userLocation: Location = new Location();
   locations: Location[];
 
   constructor(private locationService: LocationService,
-    private router: Router) { }
+    private router: Router,
+    private readonly geolocation: GeolocationService) { }
 
   ngOnInit(): void {
 
     this.getLocations();
+
+    this.geolocation.subscribe({
+      next: (data: GeolocationPosition) => {
+        console.log(data);
+        this.userLocation.latitude = data.coords.latitude;
+        this.userLocation.longitude = data.coords.longitude;
+      },
+      error: (error) => console.log(error)
+    });
 
     // Mocked Values
     // this.locations = [{
