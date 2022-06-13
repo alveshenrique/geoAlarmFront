@@ -80,4 +80,8 @@ export class LocationListComponent implements OnInit {
     this.router.navigate(['location-details', id]);
   }
 
+  askForGeolocationPermission() {
+    navigator.geolocation.getCurrentPosition((data) => console.log(data))
+  }
+
 }
