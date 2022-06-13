@@ -23,14 +23,14 @@ export class LocationListComponent implements OnInit {
 
     this.getLocations();
 
-    this.geolocation.subscribe({
-      next: (data: GeolocationPosition) => {
-        console.log(data);
-        this.userLocation.latitude = data.coords.latitude;
-        this.userLocation.longitude = data.coords.longitude;
-      },
-      error: (error) => console.log(error)
-    });
+    // this.geolocation.subscribe({
+    //   next: (data: GeolocationPosition) => {
+    //     console.log(data);
+    //     this.userLocation.latitude = data.coords.latitude;
+    //     this.userLocation.longitude = data.coords.longitude;
+    //   },
+    //   error: (error) => console.log(error)
+    // });
 
     // Mocked Values
     // this.locations = [{
@@ -81,7 +81,12 @@ export class LocationListComponent implements OnInit {
   }
 
   askForGeolocationPermission() {
-    navigator.geolocation.getCurrentPosition((data) => console.log(data))
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((data) => {
+        this.userLocation.latitude = data.coords.latitude;
+        this.userLocation.longitude = data.coords.longitude;
+      });
+    }
   }
 
 }
