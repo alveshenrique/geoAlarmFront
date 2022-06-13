@@ -85,7 +85,11 @@ export class LocationListComponent implements OnInit {
       navigator.geolocation.getCurrentPosition((data) => {
         this.userLocation.latitude = data.coords.latitude;
         this.userLocation.longitude = data.coords.longitude;
-      });
+      },
+      (error) => {},
+      {enableHighAccuracy: true,
+      timeout: 5000,
+    maximumAge: 10000});
     }
   }
 
